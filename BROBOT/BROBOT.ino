@@ -46,8 +46,8 @@
 
 #include <JJROBOTS_OSC.h>
 #include <JJROBOTS_BROBOT.h>
-#include <Wire.h>
-#include <I2Cdev.h>                // I2Cdev lib from www.i2cdevlib.com
+// #include <Wire.h>
+// #include <I2Cdev.h>                // I2Cdev lib from www.i2cdevlib.com
 #include <JJ_MPU6050_DMP_6Axis.h>  // Modified version of the MPU6050 library to work with DMP (see comments inside)
 // This version optimize the FIFO (only contains quaternion) and minimize code size
 
@@ -927,7 +927,7 @@ void loop()
 #endif
 #if SHUTDOWN_WHEN_BATTERY_OFF==1
 
-    if (BROBOT.readBattery(); < BATTERY_SHUTDOWN)
+    if (BROBOT.readBattery() < BATTERY_SHUTDOWN)
     {
       // Robot shutdown !!!
       Serial.println("LOW BAT!! SHUTDOWN");
